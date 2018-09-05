@@ -10,6 +10,8 @@ import UIKit
 
 class HomeController: UICollectionViewController {
     
+    let stateController = StateController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,13 +32,14 @@ extension HomeController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return stateController.getNumberOfUsers
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:  UICollectionView.customCellID , for: indexPath)
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:  UICollectionView.customCellID , for: indexPath) as! CollectionViewCustomCell
+     
+        cell.user = stateController.getUser(at: indexPath)
         return cell
     }
     
@@ -74,6 +77,5 @@ extension HomeController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize(width: view.frame.width, height: 50)
     }
-    
 }
 

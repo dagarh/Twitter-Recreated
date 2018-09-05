@@ -10,12 +10,29 @@ import UIKit
 
 class CollectionViewCustomCell: UICollectionViewCell {
     
-    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet private weak var profileImageView: UIImageView!
+    @IBOutlet private weak var nameLabel: UILabel!
+    
+    @IBOutlet private weak var usernameLabel: UILabel!
+    
+    @IBOutlet private weak var bioTextView: UITextView!
+    
+    
+    @IBOutlet weak var followButton: UIButton!
+    
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        
+    }
+    
+    var user: User? {
+        didSet {
+            if let user = user {
+                nameLabel.text = user.name
+            }
+        }
     }
     
 }
