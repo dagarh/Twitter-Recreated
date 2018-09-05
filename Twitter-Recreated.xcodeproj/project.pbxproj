@@ -17,6 +17,7 @@
 		01416F06213FBACA008259B4 /* CollectionViewSupplementaryHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01416F05213FBACA008259B4 /* CollectionViewSupplementaryHeader.swift */; };
 		01416F08213FBD04008259B4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01416F07213FBD04008259B4 /* User.swift */; };
 		01416F0B213FBE6A008259B4 /* CollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01416F0A213FBE6A008259B4 /* CollectionViewFlowLayout.swift */; };
+		01416F0D213FE9E9008259B4 /* UICollectionView+IDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01416F0C213FE9E9008259B4 /* UICollectionView+IDs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		01416F05213FBACA008259B4 /* CollectionViewSupplementaryHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewSupplementaryHeader.swift; sourceTree = "<group>"; };
 		01416F07213FBD04008259B4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		01416F0A213FBE6A008259B4 /* CollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		01416F0C213FE9E9008259B4 /* UICollectionView+IDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+IDs.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				01416EE4213EADA2008259B4 /* HomeController.swift */,
+				01416F0C213FE9E9008259B4 /* UICollectionView+IDs.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				01416F00213FB8B0008259B4 /* CollectionViewCustomCell.swift in Sources */,
 				01416F08213FBD04008259B4 /* User.swift in Sources */,
 				01416EE3213EADA2008259B4 /* AppDelegate.swift in Sources */,
+				01416F0D213FE9E9008259B4 /* UICollectionView+IDs.swift in Sources */,
 				01416F04213FB9E1008259B4 /* CollectionViewSupplementaryFooter.swift in Sources */,
 				01416F06213FBACA008259B4 /* CollectionViewSupplementaryHeader.swift in Sources */,
 			);
