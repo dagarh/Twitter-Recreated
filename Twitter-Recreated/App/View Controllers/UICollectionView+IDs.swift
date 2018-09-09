@@ -10,8 +10,8 @@ import UIKit
 
 extension UICollectionView {
     
-    static let customHeaderID = "CollectionViewCustomHeader"
-    static let customCellID = "CollectionViewCustomCell"
-    static let customFooterID = "CollectionViewCustomFooter"
+    static let homeHeaderID = "HomeCollectionViewHeader"
+    static let homeCellID = "HomeCollectionViewCell"
+    static let homeFooterID = "HomeCollectionViewFooter"
     
 }

@@ -10,6 +10,8 @@ import Foundation
 
 struct User {
     
+    let profilePicName: String
     let name: String
-    
+    let username: String
+    let bioText: String
 }

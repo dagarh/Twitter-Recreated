@@ -1,118 +1,193 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="16g-U8-POO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7C3-Ye-nOa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home Controller-->
-        <scene sceneID="gnb-1f-Dg1">
+        <!--Home View Controller-->
+        <scene sceneID="cKq-hu-1ya">
             <objects>
-                <collectionViewController id="d81-pI-tPU" customClass="HomeController" customModule="Twitter_Recreated" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="JqG-pI-rav">
+                <collectionViewController id="7C3-Ye-nOa" customClass="HomeViewController" customModule="Twitter_Recreated" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="mf7-ed-bAd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uIa-AX-e69" customClass="CollectionViewFlowLayout" customModule="Twitter_Recreated" customModuleProvider="target">
-                            <size key="itemSize" width="337" height="200"/>
-                            <size key="headerReferenceSize" width="50" height="50"/>
-                            <size key="footerReferenceSize" width="50" height="50"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="vTR-jy-W4p" customClass="HomeControllerCollectionViewFlowLayout" customModule="Twitter_Recreated" customModuleProvider="target">
+                            <size key="itemSize" width="375" height="150"/>
+                            <size key="headerReferenceSize" width="40" height="40"/>
+                            <size key="footerReferenceSize" width="40" height="40"/>
+                            <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCustomCell" id="Cwc-r2-a6s" customClass="CollectionViewCustomCell" customModule="Twitter_Recreated" customModuleProvider="target">
-                                <rect key="frame" x="19" y="50" width="337" height="200"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCollectionViewCell" id="GPV-ln-bRn" customClass="HomeControllerCollectionViewCell" customModule="Twitter_Recreated" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="375" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="337" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zz-lk-G4K">
-                                            <rect key="frame" x="140" y="20" width="87" height="28"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2t-7Q-1Zc">
-                                            <rect key="frame" x="137" y="61" width="87" height="27"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aXU-Ds-gYn">
-                                            <rect key="frame" x="20" y="20" width="95" height="77"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="l8H-Xs-75u">
-                                            <rect key="frame" x="28" y="105" width="256" height="84"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDs-AG-F0U">
-                                            <rect key="frame" x="271" y="38" width="46" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <state key="normal" title="Button"/>
-                                        </button>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZUx-jw-0uQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Himanshu Dagar" translatesAutoresizingMaskIntoConstraints="NO" id="HCD-PS-nYd" customClass="UIImageViewX" customModule="Twitter_Recreated" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="PDX-OT-mc1"/>
+                                                        <constraint firstAttribute="width" constant="50" id="Yuk-gI-TeS"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Hds-H6-1WU">
+                                                    <rect key="frame" x="53" y="0.0" width="322" height="111.5"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="g35-vc-6Pj">
+                                                            <rect key="frame" x="0.0" y="0.0" width="322" height="43"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="iLQ-ne-6wL">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="202" height="43"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Himanshu Dagar" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bM-yp-54G" customClass="UILabelX" customModule="Twitter_Recreated" customModuleProvider="target">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="202" height="21.5"/>
+                                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="username" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8Z-mT-hIG" customClass="UILabelX" customModule="Twitter_Recreated" customModuleProvider="target">
+                                                                            <rect key="frame" x="0.0" y="23.5" width="202" height="19.5"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                </stackView>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7q-Vq-fzN" customClass="UIButtonX" customModule="Twitter_Recreated" customModuleProvider="target">
+                                                                    <rect key="frame" x="202" y="0.0" width="120" height="34"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="120" id="71s-nj-FWL"/>
+                                                                        <constraint firstAttribute="height" constant="34" id="MuF-8K-bVe"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="Follow" image="TwitterFollow">
+                                                                        <color key="titleColor" red="0.01771375868" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </state>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                            <real key="value" value="2"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                            <color key="value" red="0.01771375868" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                            <real key="value" value="9"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0t6-ML-sfc">
+                                                            <rect key="frame" x="0.0" y="45" width="322" height="66.5"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        </textView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OiX-bo-4rC" userLabel="Seperator Line">
+                                            <rect key="frame" x="0.0" y="149" width="375" height="1"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="0.39814319349315069" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="QZP-0H-Jmq"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                 </view>
-                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="OiX-bo-4rC" secondAttribute="bottom" id="1mK-Ra-uUD"/>
+                                    <constraint firstItem="ZUx-jw-0uQ" firstAttribute="top" secondItem="GPV-ln-bRn" secondAttribute="top" id="2cB-VL-ESR"/>
+                                    <constraint firstItem="ZUx-jw-0uQ" firstAttribute="leading" secondItem="GPV-ln-bRn" secondAttribute="leading" id="IpJ-1Y-4n5"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZUx-jw-0uQ" secondAttribute="trailing" id="NhI-Zo-1wj"/>
+                                    <constraint firstItem="OiX-bo-4rC" firstAttribute="leading" secondItem="GPV-ln-bRn" secondAttribute="leading" id="Z2F-ux-x1k"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZUx-jw-0uQ" secondAttribute="bottom" id="f7n-zN-BA0"/>
+                                    <constraint firstAttribute="trailing" secondItem="OiX-bo-4rC" secondAttribute="trailing" id="ntd-OJ-o2M"/>
+                                </constraints>
+                                <size key="customSize" width="375" height="150"/>
                                 <connections>
-                                    <outlet property="bioTextView" destination="l8H-Xs-75u" id="NXC-SA-gD6"/>
-                                    <outlet property="followButton" destination="sDs-AG-F0U" id="tfg-j6-U2h"/>
-                                    <outlet property="nameLabel" destination="2Zz-lk-G4K" id="aYz-nC-1mR"/>
-                                    <outlet property="profileImageView" destination="aXU-Ds-gYn" id="Frc-Bk-GpY"/>
-                                    <outlet property="usernameLabel" destination="Z2t-7Q-1Zc" id="IvL-LV-2Wx"/>
+                                    <outlet property="bioTextView" destination="0t6-ML-sfc" id="Syr-Zy-n8M"/>
+                                    <outlet property="followButton" destination="f7q-Vq-fzN" id="Avv-7l-0uh"/>
+                                    <outlet property="nameLabel" destination="2bM-yp-54G" id="kxd-aD-Sr3"/>
+                                    <outlet property="profileImageView" destination="HCD-PS-nYd" id="DIx-z7-OXk"/>
+                                    <outlet property="usernameLabel" destination="I8Z-mT-hIG" id="iSl-lk-3p5"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="CollectionViewCustomHeader" id="jZL-gw-FuI" customClass="CollectionViewSupplementaryHeader" customModule="Twitter_Recreated" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HomeCollectionViewHeader" id="8Rg-dz-q6H" customClass="HomeControllerCollectionViewHeader" customModule="Twitter_Recreated" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                             <autoresizingMask key="autoresizingMask"/>
-                            <color key="backgroundColor" red="0.92549019610000005" green="0.30196078430000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHO TO FOLLOW" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tF-3U-cga" customClass="UILabelX" customModule="Twitter_Recreated" customModuleProvider="target">
+                                    <rect key="frame" x="15" y="10" width="141" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p4f-YS-k5x" userLabel="Seperator Line">
+                                    <rect key="frame" x="0.0" y="39" width="375" height="1"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="0.40311964897260272" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="LJk-hH-gkQ"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="0tF-3U-cga" firstAttribute="leading" secondItem="8Rg-dz-q6H" secondAttribute="leadingMargin" constant="7" id="33Y-BI-1Jb"/>
+                                <constraint firstItem="0tF-3U-cga" firstAttribute="centerY" secondItem="8Rg-dz-q6H" secondAttribute="centerY" id="7VA-vl-3e8"/>
+                                <constraint firstAttribute="bottom" secondItem="p4f-YS-k5x" secondAttribute="bottom" id="AME-J0-FRS"/>
+                                <constraint firstAttribute="trailing" secondItem="p4f-YS-k5x" secondAttribute="trailing" id="VcV-Qk-mRN"/>
+                                <constraint firstItem="p4f-YS-k5x" firstAttribute="leading" secondItem="8Rg-dz-q6H" secondAttribute="leading" id="WX0-ZV-uJK"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="headerLabel" destination="0tF-3U-cga" id="jPG-Zc-YR3"/>
+                            </connections>
                         </collectionReusableView>
-                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="CollectionViewCustomFooter" id="j9F-MX-LwA" customClass="CollectionViewSupplementaryFooter" customModule="Twitter_Recreated" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="250" width="375" height="50"/>
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HomeCollectionViewFooter" id="nal-iC-NWR" customClass="HomeControllerCollectionViewFooter" customModule="Twitter_Recreated" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="210" width="375" height="40"/>
                             <autoresizingMask key="autoresizingMask"/>
-                            <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show me more" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rA7-yI-xhg" customClass="UILabelX" customModule="Twitter_Recreated" customModuleProvider="target">
+                                    <rect key="frame" x="15" y="9.5" width="114" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" red="0.01771375868" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="rA7-yI-xhg" firstAttribute="leading" secondItem="nal-iC-NWR" secondAttribute="leadingMargin" constant="7" id="uL0-Uh-9iw"/>
+                                <constraint firstItem="rA7-yI-xhg" firstAttribute="centerY" secondItem="nal-iC-NWR" secondAttribute="centerY" id="wPp-8i-5Rk"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="footerLabel" destination="rA7-yI-xhg" id="gZL-T8-pBL"/>
+                            </connections>
                         </collectionReusableView>
                         <connections>
-                            <outlet property="dataSource" destination="d81-pI-tPU" id="jka-Es-tza"/>
-                            <outlet property="delegate" destination="d81-pI-tPU" id="wLs-C8-aHi"/>
+                            <outlet property="dataSource" destination="7C3-Ye-nOa" id="wRs-WB-TUs"/>
+                            <outlet property="delegate" destination="7C3-Ye-nOa" id="Hbc-TB-ZBK"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="VXm-qE-Tzg"/>
                 </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3Hc-7d-9L5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2cb-aK-vdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000.8" y="152.47376311844079"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ALo-SE-lad">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="16g-U8-POO" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jsx-YF-qO4">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="d81-pI-tPU" kind="relationship" relationship="rootViewController" id="NsE-el-J1W"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g28-Zi-3B6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="68" y="137.18140929535232"/>
+            <point key="canvasLocation" x="485.60000000000002" y="141.67916041979012"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Himanshu Dagar" width="500" height="500"/>
+        <image name="TwitterFollow" width="30" height="30"/>
+    </resources>
 </document>
