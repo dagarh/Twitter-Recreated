@@ -12,48 +12,86 @@ class HomeViewController: UICollectionViewController {
     
     let stateController = HomeStateController()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         // Do stuff here
     }
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupNavigationBar()
+        collectionViewFlowLayoutSetup(with: (collectionView?.frame.width)!)
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        collectionView?.collectionViewLayout.invalidateLayout()
+        collectionViewFlowLayoutSetup(with: size.width)
+    }
+    
+    fileprivate func collectionViewFlowLayoutSetup(with width: CGFloat) {
+        if let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.estimatedItemSize = CGSize(width: width, height: 400)
+        }
+    }
 }
 
 //MARK: - CollectionView DataSource Methods
 extension HomeViewController {
+    
+    /* All of this hard coding could be removed latter. As of now think it as a hack. */
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return stateController.getNumberOfUsers
+        
+        let noOfItems = section == 0 ? stateController.usersList.count : stateController.tweetList.count
+        return noOfItems
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:  UICollectionView.homeCellID , for: indexPath) as! HomeControllerCollectionViewCell
-     
-        cell.user = stateController.getUser(at: indexPath)
-        return cell
+        if indexPath.section == 0 {
+            guard let userCell = collectionView.dequeueReusableCell(withReuseIdentifier:  UICollectionView.homeUserCell , for: indexPath) as? HomeControllerCollectionViewUserCell else {
+                return UICollectionViewCell()
+            }
+            
+            userCell.user = stateController.usersList[indexPath.item]
+            
+            return userCell
+        } else {
+            guard let tweetCell = collectionView.dequeueReusableCell(withReuseIdentifier: UICollectionView.homeTweetCell, for: indexPath) as? HomeControllerCollectionViewTweetCell else {
+                return UICollectionViewCell()
+            }
+            
+            tweetCell.tweet = stateController.tweetList[indexPath.item]
+            
+            return tweetCell
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         if kind == UICollectionElementKindSectionHeader {
             // collection view header
-            let supplementaryReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: UICollectionView.homeHeaderID, for: indexPath) as! HomeControllerCollectionViewHeader
+            guard let supplementaryReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: UICollectionView.homeHeader, for: indexPath) as? HomeControllerCollectionViewHeader else {
+                return UICollectionReusableView()
+            }
+            
             supplementaryReusableView.header = "WHO TO FOLLOW"
+            
             return supplementaryReusableView
+            
         } else {
             // collection view footer
-            let supplementaryReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: UICollectionView.homeFooterID, for: indexPath) as! HomeControllerCollectionViewFooter
+            guard let supplementaryReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: UICollectionView.homeFooter, for: indexPath) as? HomeControllerCollectionViewFooter else {
+                return UICollectionReusableView()
+            }
+            
             supplementaryReusableView.footer = "Show me more"
+            
             return supplementaryReusableView
         }
     }
@@ -66,20 +104,28 @@ extension HomeViewController {
 
 //MARK: - CollectionView Delegate Flow Layout
 extension HomeViewController : UICollectionViewDelegateFlowLayout {
+    
+    /* We could drop this method if we are enabling the auto resizing.
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width - 15, height: 150)
-    }
+        return CGSize(width: collectionView.frame.width, height: 150)
+    } */
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 40)
+        let headerSize = section == 0 ? CGSize(width: collectionView.frame.width, height: 40) : .zero
+        
+        return headerSize
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.width, height: 40)
+        let footerSize = section == 0 ? CGSize(width: collectionView.frame.width, height: 40) : .zero
+        
+        return footerSize
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+        let edgeInset = section == 0 ? UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0) : UIEdgeInsets(top: 15, left: 0, bottom: 0, right: 0)
+        
+        return edgeInset
     }
     
     // This is the space horizontally.
@@ -89,7 +135,7 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout {
     
     // This is the space vertically.
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 0
     }
 }
 

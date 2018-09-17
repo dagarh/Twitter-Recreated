@@ -1,5 +1,5 @@
 //
-//  HomeControllerCollectionViewCell.swift
+//  HomeControllerCollectionViewUserCell.swift
 //  Twitter-Recreated
 //
 //  Created by Himanshu Dagar on 05/09/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeControllerCollectionViewCell: UICollectionViewCell {
+class HomeControllerCollectionViewUserCell: UICollectionViewCell {
     
     @IBOutlet private weak var profileImageView: UIImageViewX!
     @IBOutlet private weak var nameLabel: UILabelX!
@@ -16,12 +16,6 @@ class HomeControllerCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var bioTextView: UITextView!
     
     @IBOutlet private weak var followButton: UIButtonX!
-    
-    
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
     
     var user: User? {
         didSet {
@@ -33,16 +27,18 @@ class HomeControllerCollectionViewCell: UICollectionViewCell {
             }
         }
     }
-    
+
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        // Toggle the magic that is Auto Layout
         setNeedsLayout()
         layoutIfNeeded()
         
+        // Tries to fit contentView to the target size in layoutAttributes.
         let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)
         
+        // Update layoutAttributes with height that was just calculated.
         layoutAttributes.size.height = ceil(size.height)
         
         return layoutAttributes
     }
-    
 }

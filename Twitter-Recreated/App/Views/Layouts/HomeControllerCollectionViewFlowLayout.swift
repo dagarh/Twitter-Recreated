@@ -12,8 +12,14 @@ class HomeControllerCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     override func prepare() {
         super.prepare()
+
+        /* guard let collectionView = collectionView else {
+            print("collection view is nil :(")
+            return
+        }
         
-        estimatedItemSize = CGSize(width: (collectionView?.frame.width)!, height: 250.0)
+        /* Need to set estimatedItemSize to toggle on Self Sizing. */
+         estimatedItemSize = CGSize(width: collectionView.frame.width, height: 500.0) */
     }
     
 }
