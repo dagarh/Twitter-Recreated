@@ -146,45 +146,62 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ddt-kA-lqZ">
                                             <rect key="frame" x="8" y="8" width="359" height="134"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Prince Bharti" translatesAutoresizingMaskIntoConstraints="NO" id="Kh9-M1-hLe">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Prince Bharti" translatesAutoresizingMaskIntoConstraints="NO" id="Kh9-M1-hLe" customClass="UIImageViewX" customModule="Twitter_Recreated" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="cnZ-bq-Acp"/>
                                                         <constraint firstAttribute="width" constant="50" id="wdw-0h-HXR"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="12"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IWa-Oi-cD5">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="IWa-Oi-cD5">
                                                     <rect key="frame" x="50" y="0.0" width="309" height="110"/>
                                                     <subviews>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHC-hq-4vq">
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kHC-hq-4vq">
                                                             <rect key="frame" x="0.0" y="0.0" width="309" height="83"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="s4K-8u-DYP">
-                                                            <rect key="frame" x="0.0" y="83" width="309" height="27"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="s4K-8u-DYP">
+                                                            <rect key="frame" x="0.0" y="83" width="259" height="27"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OX1-p8-YnF" userLabel="reply">
-                                                                    <rect key="frame" x="0.0" y="1.5" width="77.5" height="24"/>
+                                                                    <rect key="frame" x="0.0" y="1.5" width="24" height="24"/>
                                                                     <state key="normal" image="reply"/>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2XU-gP-x2k" userLabel="retweet">
-                                                                    <rect key="frame" x="77.5" y="0.0" width="77" height="27"/>
+                                                                    <rect key="frame" x="79.5" y="0.0" width="27" height="27"/>
                                                                     <state key="normal" image="retweet"/>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERb-BN-OT2" userLabel="like">
-                                                                    <rect key="frame" x="154.5" y="2.5" width="77.5" height="22"/>
+                                                                    <rect key="frame" x="161.5" y="2.5" width="21" height="22"/>
                                                                     <state key="normal" image="like"/>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kxc-Qk-hYc" userLabel="send_message">
-                                                                    <rect key="frame" x="232" y="2.5" width="77" height="22"/>
+                                                                    <rect key="frame" x="238" y="2.5" width="21" height="22"/>
                                                                     <state key="normal" image="send_message"/>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="s4K-8u-DYP" firstAttribute="leading" secondItem="IWa-Oi-cD5" secondAttribute="leading" id="FaV-UY-rBF"/>
+                                                        <constraint firstItem="kHC-hq-4vq" firstAttribute="leading" secondItem="IWa-Oi-cD5" secondAttribute="leading" id="LuD-KK-qhQ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="kHC-hq-4vq" secondAttribute="trailing" id="Phj-Gg-GNv"/>
+                                                        <constraint firstAttribute="trailing" secondItem="s4K-8u-DYP" secondAttribute="trailing" constant="50" id="SWU-G7-Wcc"/>
+                                                        <constraint firstAttribute="bottom" secondItem="s4K-8u-DYP" secondAttribute="bottom" id="cXi-eJ-Dje"/>
+                                                        <constraint firstItem="kHC-hq-4vq" firstAttribute="top" secondItem="IWa-Oi-cD5" secondAttribute="top" id="vKZ-VR-tin"/>
+                                                        <constraint firstItem="s4K-8u-DYP" firstAttribute="top" secondItem="kHC-hq-4vq" secondAttribute="bottom" id="xcO-CV-Xbp"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                         </stackView>
@@ -304,7 +321,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="7C3-Ye-nOa" kind="relationship" relationship="rootViewController" id="yN5-Hq-NF0"/>
+                        <segue destination="7C3-Ye-nOa" kind="relationship" relationship="rootViewController" id="NgS-A4-jJf"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsh-Fa-mfI" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -10,7 +10,7 @@ import UIKit
 
 class HomeControllerCollectionViewTweetCell: UICollectionViewCell {
     
-    @IBOutlet private weak var profilePicture: UIImageView!
+    @IBOutlet private weak var profilePicture: UIImageViewX!
     @IBOutlet private weak var tweetTextView: UITextView!
     
     var tweet: Tweet? {
