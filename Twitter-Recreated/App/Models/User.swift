@@ -8,9 +8,23 @@
 
 import Foundation
 
-struct User {
-    let profilePicName: String
+class User: Decodable {
     let name: String
-    let username: String
+    let userName: String
     let bioText: String
+    let profilePicName: String
+    
+    init(name: String, userName: String, bioText: String, profilePicName: String) {
+        self.name = name
+        self.userName = userName
+        self.bioText = bioText
+        self.profilePicName = profilePicName
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case userName = "username"
+        case bioText = "bio"
+        case profilePicName = "profileImageUrl"
+    }
 }

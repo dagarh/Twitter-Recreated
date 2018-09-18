@@ -21,7 +21,7 @@ class HomeControllerCollectionViewUserCell: UICollectionViewCell {
         didSet {
             if let user = user {
                 nameLabel.text = user.name
-                usernameLabel.text = "@\(user.username)"
+                usernameLabel.text = "\(user.userName)"
                 profileImageView.image = UIImage(named: user.profilePicName)
                 bioTextView.text = user.bioText
             }

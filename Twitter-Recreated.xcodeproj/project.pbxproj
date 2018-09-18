@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011911092150EC49000499E0 /* HomeNetworkServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011911082150EC49000499E0 /* HomeNetworkServiceController.swift */; };
+		0119110B2150EDAA000499E0 /* HomeUsersAndTweets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0119110A2150EDAA000499E0 /* HomeUsersAndTweets.swift */; };
+		0119110D21510482000499E0 /* Int+StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0119110C21510482000499E0 /* Int+StatusCode.swift */; };
 		01416EE3213EADA2008259B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01416EE2213EADA2008259B4 /* AppDelegate.swift */; };
 		01416EE5213EADA2008259B4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01416EE4213EADA2008259B4 /* HomeViewController.swift */; };
 		01416EE8213EADA2008259B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01416EE6213EADA2008259B4 /* Main.storyboard */; };
@@ -39,6 +42,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		011911082150EC49000499E0 /* HomeNetworkServiceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNetworkServiceController.swift; sourceTree = "<group>"; };
+		0119110A2150EDAA000499E0 /* HomeUsersAndTweets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUsersAndTweets.swift; sourceTree = "<group>"; };
+		0119110C21510482000499E0 /* Int+StatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+StatusCode.swift"; sourceTree = "<group>"; };
 		01416EDF213EADA2008259B4 /* Twitter-Recreated.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Twitter-Recreated.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		01416EE2213EADA2008259B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01416EE4213EADA2008259B4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +133,7 @@
 		01416EF5213EADF7008259B4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0119110A2150EDAA000499E0 /* HomeUsersAndTweets.swift */,
 				01416F07213FBD04008259B4 /* User.swift */,
 				0164FBC6214EBB8F007715D2 /* Tweet.swift */,
 			);
@@ -219,6 +226,8 @@
 			isa = PBXGroup;
 			children = (
 				01416F11213FEF2D008259B4 /* HomeStateController.swift */,
+				011911082150EC49000499E0 /* HomeNetworkServiceController.swift */,
+				0119110C21510482000499E0 /* Int+StatusCode.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -329,9 +338,12 @@
 				01416F0B213FBE6A008259B4 /* HomeControllerCollectionViewFlowLayout.swift in Sources */,
 				0164FBC5214EBB0F007715D2 /* HomeControllerCollectionViewTweetCell.swift in Sources */,
 				01416EE5213EADA2008259B4 /* HomeViewController.swift in Sources */,
+				011911092150EC49000499E0 /* HomeNetworkServiceController.swift in Sources */,
 				01416F00213FB8B0008259B4 /* HomeControllerCollectionViewUserCell.swift in Sources */,
 				01416F08213FBD04008259B4 /* User.swift in Sources */,
 				01416F12213FEF2D008259B4 /* HomeStateController.swift in Sources */,
+				0119110D21510482000499E0 /* Int+StatusCode.swift in Sources */,
+				0119110B2150EDAA000499E0 /* HomeUsersAndTweets.swift in Sources */,
 				0164FBED214EE647007715D2 /* UILabelX.swift in Sources */,
 				0164FBEA214EE647007715D2 /* UIViewXRadialGradient.swift in Sources */,
 				01416EE3213EADA2008259B4 /* AppDelegate.swift in Sources */,

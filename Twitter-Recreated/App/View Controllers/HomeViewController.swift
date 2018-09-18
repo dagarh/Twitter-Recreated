@@ -19,9 +19,22 @@ class HomeViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupNavigationBar()
         collectionViewFlowLayoutSetup(with: (collectionView?.frame.width)!)
+        loadHomeData()
+    }
+    
+    fileprivate func loadHomeData() {
+        stateController.loadData { (homeUsersAndTweets) in
+            DispatchQueue.main.async {
+                guard let users = homeUsersAndTweets?.usersList else { return }
+                guard let tweets = homeUsersAndTweets?.tweetsList else { return }
+                
+                self.stateController.homeUsersAndTweets?.usersList = users
+                self.stateController.homeUsersAndTweets?.tweetsList = tweets
+                self.collectionView?.reloadData()
+            }
+        }
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -46,8 +59,7 @@ extension HomeViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        let noOfItems = section == 0 ? stateController.usersList.count : stateController.tweetList.count
+        let noOfItems = section == 0 ? (stateController.homeUsersAndTweets?.usersList?.count ?? 0) : (stateController.homeUsersAndTweets?.tweetsList?.count ?? 0)
         return noOfItems
     }
     
@@ -58,15 +70,15 @@ extension HomeViewController {
                 return UICollectionViewCell()
             }
             
-            userCell.user = stateController.usersList[indexPath.item]
+            userCell.user = stateController.homeUsersAndTweets?.usersList?[indexPath.item]
             
             return userCell
         } else {
             guard let tweetCell = collectionView.dequeueReusableCell(withReuseIdentifier: UICollectionView.homeTweetCell, for: indexPath) as? HomeControllerCollectionViewTweetCell else {
                 return UICollectionViewCell()
             }
-            
-            tweetCell.tweet = stateController.tweetList[indexPath.item]
+        
+            tweetCell.tweet = stateController.homeUsersAndTweets?.tweetsList?[indexPath.item]
             
             return tweetCell
         }

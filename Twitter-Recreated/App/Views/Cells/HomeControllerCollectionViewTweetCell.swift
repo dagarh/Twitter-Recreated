@@ -23,7 +23,7 @@ class HomeControllerCollectionViewTweetCell: UICollectionViewCell {
                 
                 let attributedText = NSMutableAttributedString(string: user.name, attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 18)])
                 
-                let userName = "  \(user.username)\n"
+                let userName = "  \(user.userName)\n"
                 attributedText.append(NSAttributedString(string: userName, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 15), NSAttributedStringKey.foregroundColor: UIColor.gray]))
                 
                 let paragraphStyle = NSMutableParagraphStyle()
