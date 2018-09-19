@@ -11,4 +11,11 @@ import Foundation
 struct Tweet: Decodable {
     let user: User?
     let message: String?
+    let tweetImage: TweetImage?
+    
+    enum CodingKeys: String, CodingKey {
+        case user
+        case message
+        case tweetImage = "image"
+    }
 }

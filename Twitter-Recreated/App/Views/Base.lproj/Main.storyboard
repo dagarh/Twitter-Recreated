@@ -14,7 +14,7 @@
         <!--Home View Controller-->
         <scene sceneID="cKq-hu-1ya">
             <objects>
-                <collectionViewController id="7C3-Ye-nOa" customClass="HomeViewController" customModule="Twitter_Recreated" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="7C3-Ye-nOa" customClass="HomeViewController" customModule="Twitter_Recreated" customModuleProvider="target" propertyAccessControl="all" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="mf7-ed-bAd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -321,7 +321,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="7C3-Ye-nOa" kind="relationship" relationship="rootViewController" id="NgS-A4-jJf"/>
+                        <segue destination="7C3-Ye-nOa" kind="relationship" relationship="rootViewController" id="kHN-YP-dJL"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsh-Fa-mfI" userLabel="First Responder" sceneMemberID="firstResponder"/>

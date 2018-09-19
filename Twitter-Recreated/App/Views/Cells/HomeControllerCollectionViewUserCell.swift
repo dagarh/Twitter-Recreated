@@ -22,7 +22,7 @@ class HomeControllerCollectionViewUserCell: UICollectionViewCell {
             if let user = user {
                 nameLabel.text = user.name
                 usernameLabel.text = "\(user.userName)"
-                profileImageView.image = UIImage(named: user.profilePicName)
+                profileImageView.url = user.profilePicName
                 bioTextView.text = user.bioText
             }
         }

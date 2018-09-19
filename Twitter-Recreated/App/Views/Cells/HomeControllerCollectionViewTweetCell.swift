@@ -19,7 +19,7 @@ class HomeControllerCollectionViewTweetCell: UICollectionViewCell {
                 guard let user = tweet.user else { return }
                 guard let message = tweet.message else { return }
                 
-                profilePicture.image = UIImage(named: user.profilePicName)
+                profilePicture.url = user.profilePicName
                 
                 let attributedText = NSMutableAttributedString(string: user.name, attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 18)])
                 

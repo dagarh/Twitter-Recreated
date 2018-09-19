@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class HomeViewController: UICollectionViewController {
     
@@ -21,20 +22,58 @@ class HomeViewController: UICollectionViewController {
         super.viewDidLoad()
         setupNavigationBar()
         collectionViewFlowLayoutSetup(with: (collectionView?.frame.width)!)
+        
+        configurePullToRefreshOnCollectionView()
         loadHomeData()
     }
     
     fileprivate func loadHomeData() {
         stateController.loadData { (homeUsersAndTweets) in
             DispatchQueue.main.async {
-                guard let users = homeUsersAndTweets?.usersList else { return }
-                guard let tweets = homeUsersAndTweets?.tweetsList else { return }
+                guard let homeUsersAndTweets = homeUsersAndTweets else {
+                    SVProgressHUD.dismiss()
+                    self.collectionView?.refreshControl?.endRefreshing()
+                    
+                    self.errorControl()
+                    return
+                }
+                
+                guard let users = homeUsersAndTweets.usersList else { return }
+                guard let tweets = homeUsersAndTweets.tweetsList else { return }
                 
                 self.stateController.homeUsersAndTweets?.usersList = users
                 self.stateController.homeUsersAndTweets?.tweetsList = tweets
                 self.collectionView?.reloadData()
+                
+                SVProgressHUD.dismiss()
+                self.collectionView?.refreshControl?.endRefreshing()
             }
         }
+        
+        if !(collectionView?.refreshControl?.isRefreshing)! {
+            SVProgressHUD.show(withStatus: "It's working...")
+        }
+    }
+    
+    private func errorControl() {
+        let errorController = UIAlertController(title: "Error", message: "Apologies something went wrong. Please press OK to try again", preferredStyle: .alert)
+        
+        errorController.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+            self.loadHomeData()
+        })
+        
+        self.present(errorController, animated: true, completion: nil)
+    }
+    
+    // Pull to Refresh
+    func configurePullToRefreshOnCollectionView() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
+        collectionView?.refreshControl = refreshControl
+    }
+    
+    @objc func refresh() {
+        loadHomeData()
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

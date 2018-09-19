@@ -21,7 +21,7 @@ class HomeNetworkServiceController {
         return url
     }()
     
-    func fetchDataFromServer(with completionHandler: @escaping ((HomeUsersAndTweets?) -> Void)) {
+    func fetchHomeFeed(with completionHandler: @escaping ((HomeUsersAndTweets?) -> Void)) {
         let sharedSession = URLSession.shared
         
         guard let apiUrl = APIUrl else {

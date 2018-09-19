@@ -18,6 +18,6 @@ class HomeStateController {
     
     func loadData(with completionHandler: @escaping ((HomeUsersAndTweets?) -> Void)) {
         // Here you can control things if you want regarding networking and lot of other things.
-        HomeNetworkServiceController.shared.fetchDataFromServer(with: completionHandler)
+        HomeNetworkServiceController.shared.fetchHomeFeed(with: completionHandler)
     }
 }
