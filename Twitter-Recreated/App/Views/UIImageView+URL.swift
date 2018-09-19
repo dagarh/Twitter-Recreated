@@ -24,7 +24,7 @@ extension UIImageView {
             
             // Here you could provide caching mechanism using NSCache class if you want. If you don't provide then it would be bad thing because whenever you are scrolling, you are making this network call for loading images again and again. So caching would be a good way.
             
-            let dataTask = sharedSession.dataTask(with: imageURLComponents.url!) { (data, response, error) -> Void in
+            let dataTask = sharedSession.dataTask(with: imageURLComponents.url!) { [weak self] (data, response, error) -> Void in
                 if let error = error {
                     print("Client side error while loading image: \(error.localizedDescription)")
                     return
@@ -37,7 +37,7 @@ extension UIImageView {
                 }
                 
                 DispatchQueue.main.async {
-                    self.image = UIImage(data: data)
+                    self?.image = UIImage(data: data)
                 }
             }
             
